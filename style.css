@@ -69,278 +69,52 @@ h2 {
     width: 0; /* Começa sem mostrar o texto */
   }
   to {
-    width: 30%; /* Vai até 100% para mostrar o texto inteiro */
+    width: 100%; /* Vai até 100% para mostrar o texto inteiro */
   }
 }
 
-/* Animação do cursor piscando */
+
 /* Animação do cursor piscando, mas removendo ao final */
 @keyframes blinkCaret {
   0% {
-    border-color: #F3E9DC; /* O cursor começa visível */
+    border-color: transparent; /* O cursor começa visível */
   }
 }
 
-/* PÁGINA PRINCIPAL */
-/* Responsividade para telas menores (dispositivos móveis) */
+/* responsividade skills */
+/* Layout para telas grandes (desktop ou notebook) */
+.conteudo {
+  display: flex;
+  justify-content: space-between; /* Espaço entre a imagem e o texto */
+  align-items: center; /* Alinha as divs verticalmente */
+  margin: 80px; /* Espaçamento ao redor */
+}
+
+.textos {
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+.imagem {
+  text-align: center;
+  width: 100%;
+  max-width: 690px;
+}
+
+/* Responsividade para telas pequenas (smartphones) */
 @media (max-width: 768px) {
   .conteudo {
-    flex-direction: column; /* Organiza os itens na vertical */
-    align-items: center; /* Centraliza o conteúdo */
-    margin: 20px;
+    flex-direction: column; /* Empilha os elementos na vertical */
+    align-items: center; /* Centraliza os itens */
+    margin: 40px; /* Reduz a margem em telas pequenas */
   }
 
-  /* A imagem vem depois do texto (graças ao order: -1) */
   .imagem {
-    order: 1; /* Coloca a imagem abaixo do texto em telas pequenas */
-    text-align: center; /* Centraliza a imagem e o texto da citação */
+    order: -1; /* Coloca a imagem acima do texto em telas pequenas */
+    max-width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
   }
 
   .textos {
-    max-width: 100%; /* Permite que o conteúdo de texto ocupe toda a largura */
-    margin-bottom: 30px; /* Ajuste do espaçamento inferior */
-  }
-
-  h2 {
-    font-size: 24px; /* Reduz o tamanho do título */
-    margin-top: 0;
-  }
-
-  h3 {
-    font-size: 16px; /* Ajuste no tamanho do subtítulo */
-  }
-
-  h4 {
-    font-size: 16px; /* Ajuste no tamanho do parágrafo */
-  }
-
-  .imagem img {
-    max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 100%; /* Garante que o texto ocupe toda a largura disponível */
   }
 }
-
-
-/* Estilos gerais */
-.skills {
-  margin-top: -780px; /* Você pode ajustar esse valor conforme necessário */
-  margin-left: 80px;
-  width: auto;
-}
-
-.skills h1 {
-  font-weight: 900;
-  color: #8a5637;
-  margin-bottom: 20px;
-}
-
-.icons i {
-  font-size: 30px;
-  margin-right: 10px;
-  transition: transform 0.3s ease-in-out; /* Efeito de animação suave ao passar o mouse */
-}
-
-/* Responsividade para telas pequenas (dispositivos móveis) */
-@media (max-width: 768px) {
-  .skills {
-      margin-left: 20px; /* Reduzindo a margem esquerda para dispositivos menores */
-      text-align: center; /* Centraliza os ícones */
-  }
-
-  .skills h1 {
-      font-size: 24px; /* Ajustando o tamanho do título para telas menores */
-  }
-
-  .icons {
-      display: flex;
-      flex-direction: column; /* Empilha os ícones verticalmente */
-      align-items: center; /* Centraliza os ícones */
-  }
-
-  .icons i {
-      font-size: 40px; /* Aumenta o tamanho dos ícones em telas pequenas para maior visibilidade */
-      margin-bottom: 15px; /* Adiciona um espaço entre os ícones */
-  }
-}
-
-/* Responsividade para telas muito pequenas (ex: smartphones em modo retrato) */
-@media (max-width: 480px) {
-  .skills h1 {
-      font-size: 20px; /* Ajustando ainda mais o título */
-  }
-
-  .icons i {
-      font-size: 35px; /* Ajustando o tamanho dos ícones */
-  }
-}
-
-/* SKILLS */
-
-
-
-/* projects */
-/* Estilos gerais para os cartões */
-.cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 50px;
-  flex-wrap: wrap; /* Faz os cards se ajustarem em telas menores */
-}
-
-.card {
-  width: 300px;
-  background: #c08553;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.card-img-top {
-  width: 100%; /* Faz a imagem ocupar toda a largura do card */
-  height: auto;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-title {
-  color: #F3E9DC;
-  font-size: 18px;
-}
-
-.card-text {
-  color: #F3E9DC;
-  font-size: 14px;
-}
-
-.card a {
-  background: #F3E9DC;
-  color: #ad7858;
-  border-radius: 120px;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  width: 100px;
-  margin-left: 80px;
-  margin-bottom: 10px;
-}
-
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
-  .cards-container {
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .card {
-    width: 90%; /* Reduz a largura do card para caber melhor na tela */
-    margin-bottom: 20px; /* Espaçamento entre os cards quando empilhados */
-  }
-
-  .card-title {
-    font-size: 16px; /* Reduz o tamanho da fonte no título */
-  }
-
-  .card-text {
-    font-size: 12px; /* Ajuste na fonte do texto */
-  }
-
-  .card a {
-    width: 120px; /* Aumenta o tamanho do botão "Acessar" */
-  }
-}
-
-/* Responsividade para telas muito pequenas */
-@media (max-width: 480px) {
-  .card {
-    width: 100%; /* Faz o card ocupar toda a largura disponível */
-  }
-
-  .card-title {
-    font-size: 14px; /* Ajuste do tamanho do título */
-  }
-
-  .card-text {
-    font-size: 12px; /* Ajuste do tamanho do texto */
-  }
-}
-
-
-/* contatos */
-/* Estilos gerais para a seção de contatos */
-.contacts {
-  margin-top: 100px;
-}
-
-/* Estilo para o título da seção de redes sociais */
-.contacts h1 {
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 900;
-  color: #8a5637;
-  margin-top: 170px;
-  margin-bottom: 30px;
-  text-align: center;
-  width: fit-content;
-}
-
-/* Estilos para os ícones das redes sociais */
-.contact-box {
-  color: #c08553;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 45px;
-  margin: 10px;
-}
-
-.contact-box.contact1 {
-  color: #8a5637;
-}
-
-/* Responsividade para telas pequenas (por exemplo, celulares) */
-@media (max-width: 768px) {
-  /* Alinha os ícones das redes sociais em uma coluna */
-  .contacts .contact-box {
-    font-size: 35px; /* Reduz o tamanho dos ícones */
-  }
-
-  /* Ajusta o tamanho do título */
-  .contacts h1 {
-    font-size: 24px;
-  }
-
-  /* Organiza os ícones das redes sociais verticalmente */
-  .contacts .contact-box {
-    margin-bottom: 20px; /* Adiciona espaçamento entre os ícones */
-  }
-
-  /* Formulário de contato - ajusta o layout para telas pequenas */
-  .mb-3 {
-    width: 80%; /* Faz os campos do formulário ocuparem 80% da largura */
-  }
-
-  .form-control {
-    padding: 12px; /* Ajusta o espaçamento interno dos campos */
-  }
-}
-
-/* Responsividade para telas muito pequenas (ex: smartphones em modo retrato) */
-@media (max-width: 480px) {
-  .contacts h1 {
-    font-size: 18px; /* Ajusta o tamanho do título para telas menores */
-  }
-
-  .contacts .contact-box {
-    font-size: 30px; /* Reduz um pouco mais o tamanho dos ícones */
-  }
-
-  .mb-3 {
-    width: 90%; /* Os campos de entrada ocupam quase toda a largura */
-  }
-
-  .form-control {
-    font-size: 14px; /* Reduz o tamanho da fonte nos campos de entrada */
-  }
-}
-
